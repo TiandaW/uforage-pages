@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're a Community Connector — uForage</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EB;
+    --bark: #2C1F0E;
+    --dark: #1A1208;
+    --straw: #E8C96B;
+    --amber: #BA7517;
+    --soil: #5C3D1E;
+    --mist: #C8D8C0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(232,201,107,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(200,216,192,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 52px 44px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .emoji {
+    font-size: 64px;
+    margin-bottom: 20px;
+    display: block;
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+  }
+  @keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: italic; color: var(--bark); font-weight: 500; }
+  .tagline {
+    font-size: 16px;
+    color: var(--soil);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(232,201,107,0.2);
+    color: var(--amber);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+    border: 1px solid rgba(232,201,107,0.3);
+  }
+  .cta {
+    display: block;
+    background: var(--bark);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .cta:hover { background: var(--dark); transform: translateY(-1px); }
+  .cta-secondary {
+    display: block;
+    color: var(--soil);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .cta-secondary:hover { opacity: 1; }
+  .divider {
+    height: 1px;
+    background: rgba(44,31,14,0.1);
+    margin: 32px 0;
+  }
+  .footnote {
+    font-size: 12px;
+    color: var(--soil);
+    opacity: 0.5;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">uForage</div>
+  <span class="emoji">🤝</span>
+  <h1>You're a <em>Community Builder.</em><br>Your suburb needs you.</h1>
+  <p class="tagline">The most active uForage communities were built by one person who started inviting their neighbours. That could be you. Open the app and start connecting your local food community.</p>
+  <div class="badge">🌍 Community Builder · Recorded</div>
+  <a href="https://relink.is/zjq7jb" class="cta">Open uForage and get started 🌿</a>
+  
+  <div class="divider"></div>
+  <p class="footnote">Your answer has been noted. We'll use it to help you build and grow your local food community.</p>
+</div>
+</body>
+</html>

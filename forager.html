@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're a Forager — uForage</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EB;
+    --bark: #2C1F0E;
+    --forest: #2D4A20;
+    --moss: #3D5A2E;
+    --fern: #4A6741;
+    --sage: #7A9B6B;
+    --mist: #C8D8C0;
+    --soil: #5C3D1E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--forest);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(122,155,107,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(200,216,192,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 52px 44px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .emoji {
+    font-size: 64px;
+    margin-bottom: 20px;
+    display: block;
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+  }
+  @keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--fern);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: italic; color: var(--fern); }
+  .tagline {
+    font-size: 16px;
+    color: var(--soil);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(74,103,65,0.1);
+    color: var(--fern);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+    border: 1px solid rgba(74,103,65,0.2);
+  }
+  .cta {
+    display: block;
+    background: var(--fern);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .cta:hover { background: var(--bark); transform: translateY(-1px); }
+  .cta-secondary {
+    display: block;
+    color: var(--soil);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .cta-secondary:hover { opacity: 1; }
+  .divider {
+    height: 1px;
+    background: rgba(44,31,14,0.1);
+    margin: 32px 0;
+  }
+  .footnote {
+    font-size: 12px;
+    color: var(--soil);
+    opacity: 0.5;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">uForage</div>
+  <span class="emoji">🌿</span>
+  <h1>You're a <em>Forager.</em><br>The wild pantry awaits.</h1>
+  <p class="tagline">Explore 1.6 million wild food spots mapped by communities around the world. Discover what's growing free in your neighbourhood — and share what you find.</p>
+  <div class="badge">🍄 Forager · Recorded</div>
+  <a href="https://relink.is/zjq7jb" class="cta">Explore the forager map 🗺️</a>
+  
+  <div class="divider"></div>
+  <p class="footnote">Your answer has been noted. We'll use it to surface more wild food content and seasonal spots near you.</p>
+</div>
+</body>
+</html>
