@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+  uForage — Michael interview landing page (for GitHub Pages)
+
+  TWO THINGS TO DO BEFORE THIS GOES LIVE:
+
+  1) WIRE UP THE FORM TO CUSTOMER.IO
+     Paste your Customer.io "Custom forms" JavaScript snippet where marked below
+     (search this file for: PASTE CUSTOMER.IO FORMS SNIPPET HERE).
+     That snippet uses your PUBLIC site/tracking id, which is safe in a public page.
+     NEVER paste a secret App API key into this file — it would be exposed to the world.
+     Once the snippet is in, Customer.io captures the form as a "form_submit" event,
+     and your triggered campaign sends the confirmation + the interview email.
+     If you'd rather not use the snippet, set the <form action="..."> to a hosted
+     form endpoint (Tally, Formspree, etc.) instead.
+
+  2) UPDATE THE SHARE URL
+     In the <meta property="og:url"> tag below, replace the placeholder with the
+     real page address (e.g. https://tiandaw.github.io/uforage-pages/june-interview).
+-->
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choosing abundance: a conversation with forager Michael — uForage</title>
+  <meta name="description" content="Rainforest forager Michael (@secretsoftherainforest) on wild food, fear and abundance, and his dream of fruit on every nature strip.">
+
+  <!-- Social share preview -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Choosing abundance: a conversation with forager Michael">
+  <meta property="og:description" content="Wild food, fear and abundance, and a dream of fruit on every nature strip. A uForage interview.">
+  <meta property="og:image" content="https://userimg-assets-eu.customeriomail.com/images/client-env-209054/01KVYZZ10DBE9G9JMPCWNWY0J8.jpg">
+  <meta property="og:url" content="https://REPLACE-WITH-YOUR-PAGE-URL">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- PASTE CUSTOMER.IO FORMS SNIPPET HERE -->
+
+  <style>
+    :root{
+      --bark:#2C1F0E;
+      --orange:#FF914D;
+      --green:#89C9A9;
+      --sage:#7A9B6B;
+      --yellow:#FFE566;
+      --tint:#F0F7F3;
+      --white:#FFFFFF;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--white);
+      color:var(--bark);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:17px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;height:auto;display:block;}
+    a{color:var(--orange);}
+    .skip{position:absolute;left:-9999px;top:0;background:var(--bark);color:#fff;padding:10px 16px;z-index:10;}
+    .skip:focus{left:8px;top:8px;}
+
+    .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+
+    /* Header */
+    header.site{padding:26px 0 6px;text-align:center;}
+    header.site img{width:150px;margin:0 auto;}
+
+    /* Hero */
+    .hero{padding:18px 0 8px;}
+    .eyebrow{
+      font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+      font-weight:bold;color:var(--sage);margin:0 0 14px;
+    }
+    h1{
+      font-family:Georgia,Times,serif;font-weight:normal;
+      font-size:34px;line-height:1.22;margin:0 0 16px;color:var(--bark);
+    }
+    .dek{font-size:18px;line-height:1.6;color:var(--bark);margin:0 0 22px;}
+    .hero-photo{border-radius:10px;margin:6px 0 4px;width:100%;}
+    .hero-cta{margin:18px 0 6px;}
+
+    /* Article */
+    article{padding:8px 0 8px;}
+    article p{margin:0 0 18px;}
+    .quote{
+      font-family:Georgia,Times,serif;font-style:italic;
+      font-size:18px;line-height:1.6;margin:0 0 18px;color:var(--bark);
+    }
+    .pull{
+      border-left:4px solid var(--orange);
+      padding:8px 0 8px 26px;margin:26px 0;
+    }
+    .pull.green{border-left-color:var(--green);}
+    .pull p{
+      font-family:Georgia,Times,serif;font-style:italic;
+      font-size:23px;line-height:1.45;margin:0 0 10px;
+    }
+    .pull .by{
+      font-family:Arial,Helvetica,sans-serif;font-style:normal;
+      font-size:13px;font-weight:bold;color:var(--bark);margin:0;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-block;background:var(--orange);color:#fff;
+      font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;
+      text-decoration:none;padding:14px 30px;border-radius:8px;border:0;cursor:pointer;
+      transition:background .15s ease;
+    }
+    .btn:hover{background:#ef8038;}
+    .btn:focus-visible{outline:3px solid var(--green);outline-offset:2px;}
+
+    /* Signup band */
+    .signup{background:var(--tint);margin-top:40px;padding:44px 0;}
+    .signup h2{
+      font-family:Georgia,Times,serif;font-weight:normal;font-size:27px;
+      line-height:1.3;margin:0 0 12px;
+    }
+    .signup p.lead{margin:0 0 22px;font-size:17px;}
+    .card{
+      background:var(--white);border:1px solid #e4ece8;border-radius:12px;
+      padding:24px;box-shadow:0 6px 22px rgba(44,31,14,0.05);
+    }
+    .field{margin:0 0 14px;}
+    label{display:block;font-size:13px;font-weight:bold;color:var(--sage);
+      text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px;}
+    input[type=text],input[type=email]{
+      width:100%;padding:13px 14px;font-size:16px;font-family:Arial,Helvetica,sans-serif;
+      border:1px solid #cfd8d3;border-radius:8px;color:var(--bark);background:#fff;
+    }
+    input:focus{outline:3px solid var(--green);outline-offset:1px;border-color:var(--green);}
+    .formnote{font-size:13px;color:var(--sage);margin:14px 0 0;}
+    .success{
+      display:none;background:#fff;border:1px solid var(--green);border-radius:12px;
+      padding:24px;font-size:17px;
+    }
+    .success strong{color:var(--bark);}
+
+    /* About uForage */
+    .about{padding:42px 0 12px;text-align:center;}
+    .about h2{font-family:Georgia,Times,serif;font-weight:normal;font-size:25px;margin:0 0 12px;}
+    .about p{margin:0 0 20px;text-align:left;}
+
+    /* Footer */
+    footer{padding:34px 0 44px;text-align:center;}
+    footer .social a{display:inline-block;margin:0 6px;}
+    footer .social img{width:30px;height:30px;display:inline-block;}
+    footer .fine{font-size:13px;color:var(--sage);margin:18px 0 0;line-height:1.5;}
+
+    @media (max-width:520px){
+      h1{font-size:28px;}
+      .pull p{font-size:20px;}
+      body{font-size:16px;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto;}
+      .btn{transition:none;}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#read">Skip to the interview</a>
+
+  <header class="site">
+    <a href="https://relink.is/zjq7jb"><img src="https://userimg-assets-eu.customeriomail.com/images/client-env-209054/01KQ94M5GA206GKZ27BXVDD52J.png" alt="uForage"></a>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" id="read">
+      <p class="eyebrow">uForage &middot; The Interview &middot; June 2026</p>
+      <h1>Choosing abundance: a conversation with rainforest forager Michael</h1>
+      <p class="dek">Michael, better known to 24,000+ people as @secretsoftherainforest, on wild food, fear and abundance, and his dream of fruit on every nature strip.</p>
+      <img class="hero-photo" src="https://userimg-assets-eu.customeriomail.com/images/client-env-209054/01KVYZZ10DBE9G9JMPCWNWY0J8.jpg" alt="Michael, the rainforest forager behind @secretsoftherainforest">
+      <p class="hero-cta"><a class="btn" href="#subscribe">Get the next issue &rarr;</a></p>
+    </section>
+
+    <article>
+      <p>Michael didn't plan on becoming a forager. A few years back he was guiding tours out at Uluru. These days he's tucked into the Daintree, sharing what he finds as @secretsoftherainforest. What he was really chasing was never a following, though. He just wanted to understand things: the plants, the medicines, the old link between people and country that most of us have let go quiet. The foraging crept up on him. It started as curiosity, and it turned into a whole way of seeing the world.</p>
+
+      <div class="pull">
+        <p>"What I decided on is living in either the fear or abundance mindset. I chose the latter. There are more of us than there are of them and I hope to use this tool to empower people and bring them together."</p>
+        <p class="by">Michael, @secretsoftherainforest</p>
+      </div>
+
+      <p>He's thought plenty about the heavier stuff going on in the world, the kind that can pull you towards fear if you let it. At some point he made a quiet decision to meet it with abundance instead. And the road to that, like most good stories, started with everything falling apart first.</p>
+      <p>He'd walked away from a five-year relationship, a career that was never really his, and a friend group he'd outgrown. Bought a campervan, pointed it at the middle of the country. Out at Uluru it wasn't the rock that got him so much as everything underneath it: 65,000 years of knowledge about food, medicine, plants and country, older than anything he'd been raised to notice.</p>
+      <p>Then his body forced the issue. A quiet afternoon painting with his partner tipped into a full emergency: pancreatitis, no hospital for hundreds of kilometres, a nurse named Danielle, a hit of morphine, and the Royal Flying Doctors getting him to Alice Springs. Ten days in a hospital bed leaves a lot of room to think. He came out the other side off the drink and the cigarettes, properly curious about what food and medicine are really for, and headed home to the Daintree to learn it for himself.</p>
+      <p>None of it, he'll happily tell you, came from a classroom.</p>
+      <p class="quote">"I haven't gone to university for this stuff. I just read the same books again and again until I can finally envisage the story."</p>
+
+      <p>Two years of guiding tours, talking every single day about plants and country and the circle of life, and at some point the talking stops being enough. You have to start living the thing you keep describing. That's how Secrets of the Rainforest began, though he's lovely and honest about how unglamorous the early days were. Filming yourself in public is mortifying, and the urge to bail before anyone's even watching is real.</p>
+      <p class="quote">"It's still cringe. Who cares? Just. Who cares? You're not dancing like an idiot in front of a car crash. You're out there doing something."</p>
+      <p>And then there's the reward, which turns out to be almost laughably simple. You learn one plant, really learn it, and it's yours for good. You show your kids. You spot it on a walk years later. You hand it to a stranger on the path.</p>
+      <p class="quote">"I ran into a couple of ladies looking at these blue berries on the ground. I said, you have a blue quandong, you can eat that. Once you know that one, that's it. You're good for life."</p>
+      <p>That's the whole thing, really. One plant at a time, passed from person to person, until knowing what's edible around you stops feeling like a specialist skill and just feels normal again.</p>
+
+      <div class="pull green">
+        <p>"You don't have to be a professional. You just need to triple check."</p>
+        <p class="by">Michael, @secretsoftherainforest</p>
+      </div>
+
+      <p>If you're curious but a bit scared of getting it wrong, his advice is wonderfully gentle. Start at a botanical garden, where everything's labelled with its proper scientific name, because some plants that look like twins are nothing of the sort. Find people who know more than you and follow them. Don't expect it to stick first go: he reckons it takes about seven rounds before a plant really lodges, which is half the reason he films them. You hear the name ten times just in the edit. And whatever you do, don't force it.</p>
+      <p class="quote">"Some things, people say and you can feel it's going to leave. Other things just click. You heard it at the right moment, and it stays forever."</p>
+
+      <p>He's only just found uForage, but he already has a soft spot for what it could grow into, and a clear sense of what the people using it should look after. Take what you need, he says, and leave the rest for the other scavengers.</p>
+      <p>Mostly, though, he dreams out loud. Nature strips heavy with fruit. Trees we'd be picking from right now if we'd planted them years ago. Streets where people swap what they've grown, not for money, but for the care that went into it.</p>
+      <p class="quote">"It's not about the money anymore. It's about the trade. The time, the effort, the love that you put into something. You want the same amount of love back."</p>
+      <p>It keeps coming back to something close to home: feeding each other was never meant to be the job of the whole world, just the job of a street. There's enough land, he says. There's plenty of it. You just have to put it in the ground.</p>
+
+      <div class="pull">
+        <p>"Abundance in every street."</p>
+        <p class="by">Michael, @secretsoftherainforest</p>
+      </div>
+
+      <p>Michael's worth a follow. He shares this stuff most days over on Instagram, and it's the good kind of rabbit hole to fall into. <a href="https://www.instagram.com/secretsoftherainforest">Follow @secretsoftherainforest</a>.</p>
+    </article>
+  </div>
+
+  <section class="signup" id="subscribe">
+    <div class="wrap">
+      <h2>Like this? There's more where it came from.</h2>
+      <p class="lead">Every month we share a story like Michael's: a forager, a grower, someone quietly feeding their neighbourhood, plus what's in season and what's worth knowing. Pop your email in and we'll send the next one straight to you.</p>
+
+      <div class="card">
+        <form id="uforage-signup" novalidate>
+          <div class="field">
+            <label for="first_name">First name (optional)</label>
+            <input type="text" id="first_name" name="first_name" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <button class="btn" type="submit">Send me the next issue</button>
+          <p class="formnote">We'll send a quick note to confirm, then the good stuff. Unsubscribe anytime.</p>
+        </form>
+        <div class="success" id="signup-success">
+          <strong>Almost there.</strong> Check your inbox for a confirmation, click the link, and we'll send Michael's interview your way. 💛
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="about">
+      <h2>New here?</h2>
+      <p>uForage is a free community food map for Australia. It's where backyard growers share their surplus, foragers map wild edibles, small producers find local customers, and neighbours discover the real food growing right around them. Not a supermarket, not a delivery app. Just the abundance that already exists in your community, made visible.</p>
+      <p><a class="btn" href="https://relink.is/zjq7jb">Open uForage</a></p>
+    </section>
+
+    <footer>
+      <div class="social">
+        <a href="https://www.facebook.com/uforage"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" alt="Facebook"></a>
+        <a href="https://instagram.com/uforageapp"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@uforage"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/tiktok@2x.png" alt="TikTok"></a>
+      </div>
+      <p class="fine">uForage &middot; Murwillumbah, Northern Rivers NSW &middot; uforage.com.au</p>
+    </footer>
+  </div>
+
+  <script>
+    // Friendly success state. Customer.io's forms snippet (pasted in <head>) captures
+    // the submission as a form_submit event; this just handles the on-page UX.
+    (function(){
+      var form = document.getElementById('uforage-signup');
+      var success = document.getElementById('signup-success');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        var email = document.getElementById('email');
+        if(!email.value || email.validity.typeMismatch || email.validity.valueMissing){
+          email.focus();
+          return; // let the browser show its validation message
+        }
+        // Give Customer.io's listener a tick to capture, then swap to the success state.
+        setTimeout(function(){
+          form.style.display = 'none';
+          success.style.display = 'block';
+          success.setAttribute('tabindex','-1');
+          success.focus();
+        }, 150);
+        e.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
