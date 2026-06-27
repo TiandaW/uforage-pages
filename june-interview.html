@@ -6,7 +6,18 @@
 
   1) WIRE UP THE FORM TO CUSTOMER.IO
      Paste your Customer.io "Custom forms" JavaScript snippet where marked below
-     (search this file for: PASTE CUSTOMER.IO FORMS SNIPPET HERE).
+     (search this file for: <script type="text/javascript">
+  (function() {
+    var t = document.createElement('script'),
+        s = document.getElementsByTagName('script')[0];
+    t.async = true;
+    t.id    = 'cio-forms-handler';
+    t.setAttribute('data-site-id', 'a30d30bced5f52c91cf4');
+    t.setAttribute('data-base-url', 'https://eu.customerioforms.com');
+    t.src = 'https://eu.customerioforms.com/assets/forms.js';
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>).
      That snippet uses your PUBLIC site/tracking id, which is safe in a public page.
      NEVER paste a secret App API key into this file — it would be exposed to the world.
      Once the snippet is in, Customer.io captures the form as a "form_submit" event,
