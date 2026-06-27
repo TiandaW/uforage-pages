@@ -1,33 +1,8 @@
 <!DOCTYPE html>
 <!--
   uForage — Michael interview landing page (for GitHub Pages)
-
-  TWO THINGS TO DO BEFORE THIS GOES LIVE:
-
-  1) WIRE UP THE FORM TO CUSTOMER.IO
-     Paste your Customer.io "Custom forms" JavaScript snippet where marked below
-     (search this file for: <script type="text/javascript">
-  (function() {
-    var t = document.createElement('script'),
-        s = document.getElementsByTagName('script')[0];
-    t.async = true;
-    t.id    = 'cio-forms-handler';
-    t.setAttribute('data-site-id', 'a30d30bced5f52c91cf4');
-    t.setAttribute('data-base-url', 'https://eu.customerioforms.com');
-    t.src = 'https://eu.customerioforms.com/assets/forms.js';
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>).
-     That snippet uses your PUBLIC site/tracking id, which is safe in a public page.
-     NEVER paste a secret App API key into this file — it would be exposed to the world.
-     Once the snippet is in, Customer.io captures the form as a "form_submit" event,
-     and your triggered campaign sends the confirmation + the interview email.
-     If you'd rather not use the snippet, set the <form action="..."> to a hosted
-     form endpoint (Tally, Formspree, etc.) instead.
-
-  2) UPDATE THE SHARE URL
-     In the <meta property="og:url"> tag below, replace the placeholder with the
-     real page address (e.g. https://tiandaw.github.io/uforage-pages/june-interview).
+  The Customer.io forms snippet is already installed in the head below, and the
+  share URL is set. Just replace your june-interview.html with this file and commit.
 -->
 <html lang="en-AU">
 <head>
@@ -41,10 +16,22 @@
   <meta property="og:title" content="Choosing abundance: a conversation with forager Michael">
   <meta property="og:description" content="Wild food, fear and abundance, and a dream of fruit on every nature strip. A uForage interview.">
   <meta property="og:image" content="https://userimg-assets-eu.customeriomail.com/images/client-env-209054/01KVYZZ10DBE9G9JMPCWNWY0J8.jpg">
-  <meta property="og:url" content="https://REPLACE-WITH-YOUR-PAGE-URL">
+  <meta property="og:url" content="https://tiandaw.github.io/uforage-pages/june-interview">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- PASTE CUSTOMER.IO FORMS SNIPPET HERE -->
+  <!-- Customer.io forms snippet (public site id, safe to be in a public page) -->
+  <script type="text/javascript">
+    (function() {
+      var t = document.createElement('script'),
+          s = document.getElementsByTagName('script')[0];
+      t.async = true;
+      t.id    = 'cio-forms-handler';
+      t.setAttribute('data-site-id', 'a30d30bced5f52c91cf4');
+      t.setAttribute('data-base-url', 'https://eu.customerioforms.com');
+      t.src = 'https://eu.customerioforms.com/assets/forms.js';
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
 
   <style>
     :root{
