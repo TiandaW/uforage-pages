@@ -7,20 +7,6 @@
 <title>Thanks for answering · uForage</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Customer.io forms snippet (public site id, safe to be in a public page).
-     Captures the feedback form below as a form_submit event on the person's profile. -->
-<script type="text/javascript">
-  (function() {
-    var t = document.createElement('script'),
-        s = document.getElementsByTagName('script')[0];
-    t.async = true;
-    t.id    = 'cio-forms-handler';
-    t.setAttribute('data-site-id', 'a30d30bced5f52c91cf4');
-    t.setAttribute('data-base-url', 'https://eu.customerioforms.com');
-    t.src = 'https://eu.customerioforms.com/assets/forms.js';
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
 
 <style>
   :root {
@@ -196,7 +182,8 @@
 
   <div id="ask">
     <p class="tagline">Would you tell us what's not working? Nothing's too small: a bug, something confusing, or just not much listed near you.</p>
-    <form id="uforage-feedback">
+    <form id="uforage-feedback" method="POST" action="https://eu.customerioforms.com/forms/submit_action?site_id=a30d30bced5f52c91cf4&amp;form_id=uforage-feedback&amp;success_url=https%3A%2F%2Ftiandaw.github.io%2Fuforage-pages%2Fenjoying-not-really%3Fsent%3D1">
+      <input type="hidden" name="enjoying_app" value="not_really">
       <label for="feedback" class="field-label">Tell us more</label>
       <textarea id="feedback" name="feedback" required placeholder="As much or as little as you like"></textarea>
 
@@ -225,16 +212,7 @@
 
 <script>
   (function () {
-    // Prefill "Replying as" from the newsletter link, then tidy the address bar
-    // so the email address doesn't sit in the browser history.
     var params = new URLSearchParams(window.location.search);
-    var email = document.getElementById('email');
-    if (params.get('email')) {
-      email.value = params.get('email');
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState(null, '', window.location.pathname);
-      }
-    }
 
     function show(id) {
       document.getElementById('ask').hidden = true;
@@ -243,14 +221,21 @@
       el.focus();
     }
 
-    // The browser checks the required fields before this runs, so only complete
-    // answers reach Customer.io. Its snippet captures the submit event; this just
-    // swaps in the thank-you message.
-    var form = document.getElementById('uforage-feedback');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      setTimeout(function () { show('thanks'); }, 150);
-    });
+    // Prefill "Replying as" from the newsletter link.
+    if (params.get('email')) {
+      document.getElementById('email').value = params.get('email');
+    }
+
+    // The form posts straight to Customer.io, which sends people back here
+    // with ?sent=1. Show the thank-you message for that.
+    if (params.get('sent') === '1') {
+      show('thanks');
+    }
+
+    // Tidy the address bar so the email address doesn't sit in browser history.
+    if (window.location.search && window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
 
     document.getElementById('skip').addEventListener('click', function () {
       show('skipped');
