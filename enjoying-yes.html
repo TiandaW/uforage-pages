@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Thanks for answering · uForage</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Customer.io forms snippet (public site id, safe to be in a public page).
+     Captures the feedback form below as a form_submit event on the person's profile. -->
+<script type="text/javascript">
+  (function() {
+    var t = document.createElement('script'),
+        s = document.getElementsByTagName('script')[0];
+    t.async = true;
+    t.id    = 'cio-forms-handler';
+    t.setAttribute('data-site-id', 'a30d30bced5f52c91cf4');
+    t.setAttribute('data-base-url', 'https://eu.customerioforms.com');
+    t.src = 'https://eu.customerioforms.com/assets/forms.js';
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+<style>
+  :root {
+    --cream: #F7F3EB;
+    --bark: #2C1F0E;
+    --moss: #3D5A2E;
+    --sage: #7A9B6B;
+    --mist: #C8D8C0;
+    --straw: #E8C96B;
+    --soil: #5C3D1E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--moss);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    padding: 24px;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(232,201,107,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(200,216,192,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .emoji {
+    font-size: 56px;
+    margin-bottom: 18px;
+    display: block;
+    animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+  }
+  @keyframes pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px, 6vw, 34px);
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+  h1 em { font-style: italic; color: var(--moss); }
+  .badge {
+    display: inline-block;
+    background: rgba(61,90,46,0.1);
+    color: var(--moss);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(61,90,46,0.2);
+  }
+  .tagline {
+    font-size: 16px;
+    color: var(--soil);
+    line-height: 1.7;
+    margin: 0 auto 20px;
+    max-width: 380px;
+  }
+  form { text-align: left; }
+  textarea, input[type=email] {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--bark);
+    background: #FFFFFF;
+    border: 1px solid rgba(44,31,14,0.2);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+  textarea:focus, input:focus { outline: 3px solid var(--mist); outline-offset: 1px; border-color: var(--sage); }
+  .check {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--soil);
+    line-height: 1.5;
+    margin: 14px 0 0;
+    cursor: pointer;
+  }
+  .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--moss); flex: none; }
+  .who { margin: 16px 0 20px; }
+  .field-label, .who label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .who input { font-size: 15px; padding: 10px 14px; }
+  .cta {
+    display: block;
+    width: 100%;
+    background: var(--moss);
+    color: var(--cream);
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .cta:hover { background: var(--bark); transform: translateY(-1px); }
+  .cta-secondary {
+    display: block;
+    width: 100%;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--soil);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .cta-secondary:hover { opacity: 1; }
+  .divider { height: 1px; background: rgba(44,31,14,0.1); margin: 28px 0 20px; }
+  .footnote { font-size: 12px; color: var(--soil); opacity: 0.55; line-height: 1.6; }
+  [hidden] { display: none !important; }
+  @media (max-width: 420px) { .card { padding: 40px 24px; } }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="logo">uForage</div>
+  <span class="emoji" aria-hidden="true">🌱</span>
+  <h1>That's <em>lovely</em> to hear.</h1>
+  <div class="badge">✓ Your answer's in</div>
+
+  <div id="ask">
+    <p class="tagline">Would you tell us a bit more? What do you like about it, or what do you use it for?</p>
+    <form id="uforage-feedback">
+      <label for="feedback" class="field-label">Tell us more</label>
+      <textarea id="feedback" name="feedback" required placeholder="As much or as little as you like"></textarea>
+      <label class="check"><input type="checkbox" name="share_ok" value="yes"> Happy for you to share this in a newsletter (first name only)</label>
+      <div class="who">
+        <label for="email">Replying as</label>
+        <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+      </div>
+      <button class="cta" type="submit">Send</button>
+    </form>
+    <button class="cta-secondary" id="skip" type="button">No thanks, I'm done</button>
+  </div>
+
+  <div id="thanks" hidden tabindex="-1">
+    <p class="tagline"><strong>Got it, thank you.</strong> I read every one of these myself.</p>
+    <a href="https://relink.is/zjq7jb" class="cta">Open uForage</a>
+  </div>
+
+  <div id="skipped" hidden tabindex="-1">
+    <p class="tagline">No worries. Your tap already counted, so thank you.</p>
+    <a href="https://relink.is/zjq7jb" class="cta">Open uForage</a>
+  </div>
+
+  <div class="divider"></div>
+  <p class="footnote">Tianda, uForage · Murwillumbah NSW</p>
+</main>
+
+<script>
+  (function () {
+    // Prefill "Replying as" from the newsletter link, then tidy the address bar
+    // so the email address doesn't sit in the browser history.
+    var params = new URLSearchParams(window.location.search);
+    var email = document.getElementById('email');
+    if (params.get('email')) {
+      email.value = params.get('email');
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function show(id) {
+      document.getElementById('ask').hidden = true;
+      var el = document.getElementById(id);
+      el.hidden = false;
+      el.focus();
+    }
+
+    // The browser checks the required fields before this runs, so only complete
+    // answers reach Customer.io. Its snippet captures the submit event; this just
+    // swaps in the thank-you message.
+    var form = document.getElementById('uforage-feedback');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      setTimeout(function () { show('thanks'); }, 150);
+    });
+
+    document.getElementById('skip').addEventListener('click', function () {
+      show('skipped');
+    });
+  })();
+</script>
+</body>
+</html>
