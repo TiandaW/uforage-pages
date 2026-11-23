@@ -210,6 +210,15 @@
   <p class="footnote">Tianda, uForage · Murwillumbah NSW</p>
 </main>
 
+<!-- Records the tap itself. Customer.io's clicked_link trigger never fires in this
+     workspace, so the page sends the answer as its own small form submission
+     (uforage-feedback-tap) in a hidden frame when someone arrives from the email. -->
+<iframe name="cio-tap" title="Saving your answer" hidden style="display:none" aria-hidden="true"></iframe>
+<form id="tap" method="POST" target="cio-tap" hidden action="https://eu.customerioforms.com/forms/submit_action?site_id=a30d30bced5f52c91cf4&amp;form_id=uforage-feedback-tap&amp;success_url=https%3A%2F%2Ftiandaw.github.io%2Fuforage-pages%2F">
+  <input type="hidden" name="email" id="tap-email">
+  <input type="hidden" name="enjoying_app" value="yes">
+</form>
+
 <script>
   (function () {
     var params = new URLSearchParams(window.location.search);
@@ -221,9 +230,11 @@
       el.focus();
     }
 
-    // Prefill "Replying as" from the newsletter link.
+    // Arriving from the newsletter: prefill "Replying as" and record the tap.
     if (params.get('email')) {
       document.getElementById('email').value = params.get('email');
+      document.getElementById('tap-email').value = params.get('email');
+      document.getElementById('tap').submit();
     }
 
     // The form posts straight to Customer.io, which sends people back here
