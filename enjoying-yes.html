@@ -226,11 +226,37 @@
       el.focus();
     }
 
-    // Arriving from the newsletter: prefill "Replying as" and record the tap.
+    // Arriving from the newsletter: prefill "Replying as". The tap is only
+    // recorded once a real person does something on the page (touch, click,
+    // scroll, a key, or moving the mouse a little). Work and school email
+    // systems open every link to check it's safe; they load the page but
+    // don't touch it, so they no longer count as an answer.
     if (params.get('email')) {
       document.getElementById('email').value = params.get('email');
       document.getElementById('tap-email').value = params.get('email');
-      document.getElementById('tap').submit();
+
+      var recorded = false;
+      var moved = 0, lastX = null, lastY = null;
+      var direct = ['pointerdown', 'touchstart', 'keydown', 'wheel', 'scroll'];
+
+      function record(e) {
+        if (recorded || (e && e.isTrusted === false)) return;
+        recorded = true;
+        direct.forEach(function (name) { window.removeEventListener(name, record, true); });
+        window.removeEventListener('pointermove', onMove, true);
+        document.getElementById('tap').submit();
+      }
+
+      function onMove(e) {
+        if (!e.isTrusted || (e.pointerType && e.pointerType !== 'mouse')) return;
+        if (lastX !== null) moved += Math.abs(e.clientX - lastX) + Math.abs(e.clientY - lastY);
+        lastX = e.clientX;
+        lastY = e.clientY;
+        if (moved > 40) record(e);
+      }
+
+      direct.forEach(function (name) { window.addEventListener(name, record, { capture: true, passive: true }); });
+      window.addEventListener('pointermove', onMove, { capture: true, passive: true });
     }
 
     // The form posts straight to Customer.io, which sends people back here
